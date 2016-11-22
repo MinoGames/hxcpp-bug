@@ -32,21 +32,46 @@ void Main_obj::main(){
 HXLINE(   6)		HX_VARI( ::Array< Int >,a1) = null();
 HXLINE(   7)		HX_VARI( ::cpp::VirtualArray,a2) = ::cpp::VirtualArray_obj::__new(0);
 HXLINE(   8)		a2 = null();
-HXLINE(   9)		::Main_obj::temp(a1);
-HXLINE(  10)		::Main_obj::temp(a2);
+HXLINE(  10)		::haxe::Log_obj::trace(HX_("temp1 - error present",ed,af,70,75),hx::SourceInfo(HX_("Main.hx",05,5c,7e,08),10,HX_("Main",59,64,2f,33),HX_("main",39,38,56,48)));
+HXLINE(  11)		::Main_obj::temp1(a1);
+HXLINE(  12)		::Main_obj::temp1(a2);
+HXLINE(  14)		::haxe::Log_obj::trace(HX_("temp2 - error present",ee,81,64,f8),hx::SourceInfo(HX_("Main.hx",05,5c,7e,08),14,HX_("Main",59,64,2f,33),HX_("main",39,38,56,48)));
+HXLINE(  15)		::Main_obj::temp2(a1);
+HXLINE(  16)		::Main_obj::temp2(a2);
+HXLINE(  18)		::haxe::Log_obj::trace(HX_("temp3 - no error",dd,60,61,ab),hx::SourceInfo(HX_("Main.hx",05,5c,7e,08),18,HX_("Main",59,64,2f,33),HX_("main",39,38,56,48)));
+HXLINE(  19)		::Main_obj::temp3(a1);
+HXLINE(  20)		::Main_obj::temp3(a2);
             	}
 
 
 STATIC_HX_DEFINE_DYNAMIC_FUNC0(Main_obj,main,(void))
 
-void Main_obj::temp(::cpp::VirtualArray array){
-            	HX_STACK_FRAME("Main","temp",0xf1b1ab49,"Main.temp","Main.hx",14,0x087e5c05)
+void Main_obj::temp1(::cpp::VirtualArray array){
+            	HX_STACK_FRAME("Main","temp1",0x89c434c8,"Main.temp1","Main.hx",25,0x087e5c05)
             	HX_STACK_ARG(array,"array")
-HXLINE(  14)		::haxe::Log_obj::trace(array,hx::SourceInfo(HX_("Main.hx",05,5c,7e,08),14,HX_("Main",59,64,2f,33),HX_("temp",14,c3,f9,4c)));
+HXLINE(  25)		::haxe::Log_obj::trace(array,hx::SourceInfo(HX_("Main.hx",05,5c,7e,08),25,HX_("Main",59,64,2f,33),HX_("temp1",9d,ee,90,0d)));
             	}
 
 
-STATIC_HX_DEFINE_DYNAMIC_FUNC1(Main_obj,temp,(void))
+STATIC_HX_DEFINE_DYNAMIC_FUNC1(Main_obj,temp1,(void))
+
+void Main_obj::temp2(::cpp::VirtualArray array){
+            	HX_STACK_FRAME("Main","temp2",0x89c434c9,"Main.temp2","Main.hx",30,0x087e5c05)
+            	HX_STACK_ARG(array,"array")
+HXLINE(  30)		::haxe::Log_obj::trace(array,hx::SourceInfo(HX_("Main.hx",05,5c,7e,08),30,HX_("Main",59,64,2f,33),HX_("temp2",9e,ee,90,0d)));
+            	}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC1(Main_obj,temp2,(void))
+
+void Main_obj::temp3( ::Dynamic array){
+            	HX_STACK_FRAME("Main","temp3",0x89c434ca,"Main.temp3","Main.hx",35,0x087e5c05)
+            	HX_STACK_ARG(array,"array")
+HXLINE(  35)		::haxe::Log_obj::trace(array,hx::SourceInfo(HX_("Main.hx",05,5c,7e,08),35,HX_("Main",59,64,2f,33),HX_("temp3",9f,ee,90,0d)));
+            	}
+
+
+STATIC_HX_DEFINE_DYNAMIC_FUNC1(Main_obj,temp3,(void))
 
 
 Main_obj::Main_obj()
@@ -58,7 +83,11 @@ bool Main_obj::__GetStatic(const ::String &inName, Dynamic &outValue, hx::Proper
 	switch(inName.length) {
 	case 4:
 		if (HX_FIELD_EQ(inName,"main") ) { outValue = main_dyn(); return true; }
-		if (HX_FIELD_EQ(inName,"temp") ) { outValue = temp_dyn(); return true; }
+		break;
+	case 5:
+		if (HX_FIELD_EQ(inName,"temp1") ) { outValue = temp1_dyn(); return true; }
+		if (HX_FIELD_EQ(inName,"temp2") ) { outValue = temp2_dyn(); return true; }
+		if (HX_FIELD_EQ(inName,"temp3") ) { outValue = temp3_dyn(); return true; }
 	}
 	return false;
 }
@@ -83,7 +112,9 @@ hx::Class Main_obj::__mClass;
 
 static ::String Main_obj_sStaticFields[] = {
 	HX_HCSTRING("main","\x39","\x38","\x56","\x48"),
-	HX_HCSTRING("temp","\x14","\xc3","\xf9","\x4c"),
+	HX_HCSTRING("temp1","\x9d","\xee","\x90","\x0d"),
+	HX_HCSTRING("temp2","\x9e","\xee","\x90","\x0d"),
+	HX_HCSTRING("temp3","\x9f","\xee","\x90","\x0d"),
 	::String(null())
 };
 

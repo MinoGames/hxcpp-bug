@@ -36,8 +36,14 @@ class HXCPP_CLASS_ATTRIBUTES Main_obj : public hx::Object
 		static void main();
 		static ::Dynamic main_dyn();
 
-		static void temp(::cpp::VirtualArray array);
-		static ::Dynamic temp_dyn();
+		static void temp1(::cpp::VirtualArray array);
+		static ::Dynamic temp1_dyn();
+
+		static void temp2(::cpp::VirtualArray array);
+		static ::Dynamic temp2_dyn();
+
+		static void temp3( ::Dynamic array);
+		static ::Dynamic temp3_dyn();
 
 };
 
