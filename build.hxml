@@ -1,0 +1,5 @@
+-main Main
+-cpp export
+-cp source
+
+-cmd export/Main
